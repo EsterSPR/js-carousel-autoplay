@@ -44,22 +44,7 @@ next.addEventListener('click', function(){
     //aggiungere la class active al nuovo elemento dell'array items e la vado a rimuovere da quello precedente
     //stessa cosa per i cerchi
 
-    if(itemActive < items.length - 1){
-        items[itemActive].classList.remove('active'); //rimuovo classe "active" da elemento item
-        circles[itemActive].classList.remove('active'); //rimuovo classe "active" da elemento circles
-        itemActive++;
-
-        items[itemActive].classList.add('active');
-        circles[itemActive].classList.add('active');
-    } else {
-        items[itemActive].classList.remove('active');
-        circles[itemActive].classList.remove('active');
-        
-        itemActive = 0;
-
-        items[itemActive].classList.add('active');
-        circles[itemActive].classList.add('active');
-    }
+    slideNext();
 });
 
 prev.addEventListener('click', function(){
@@ -86,4 +71,24 @@ prev.addEventListener('click', function(){
     }
 })
 
+setInterval(slideNext, 2000);
 
+
+function slideNext(){
+    if(itemActive < items.length - 1){
+        items[itemActive].classList.remove('active'); //rimuovo classe "active" da elemento item
+        circles[itemActive].classList.remove('active'); //rimuovo classe "active" da elemento circles
+        itemActive++;
+
+        items[itemActive].classList.add('active');
+        circles[itemActive].classList.add('active');
+    } else {
+        items[itemActive].classList.remove('active');
+        circles[itemActive].classList.remove('active');
+        
+        itemActive = 0;
+
+        items[itemActive].classList.add('active');
+        circles[itemActive].classList.add('active');
+    }
+}
