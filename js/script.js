@@ -71,7 +71,15 @@ prev.addEventListener('click', function(){
     }
 })
 
-setInterval(slideNext, 2000);
+let myInterval = setInterval(slideNext, 2000);
+
+document.getElementById('play').addEventListener('click', function(){
+    myInterval = setInterval(slideNext, 2000);
+})
+
+document.getElementById('pause').addEventListener('click', function(){
+    clearInterval(myInterval);
+})
 
 
 function slideNext(){

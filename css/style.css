@@ -95,9 +95,21 @@
 #play {
     background-color: dodgerblue;
     padding: 10px 14px 10px 16px;
+    transition: 0.3s;
+}
+
+#play:hover {
+    background-color: rgb(22, 122, 222);
+    cursor: pointer;
 }
 
 #pause {
     background-color: orange;
     padding: 10px 18px;
+    transition: 0.3s;
+}
+
+#pause:hover {
+    background-color: rgb(208, 137, 4);
+    cursor: pointer;
 }
